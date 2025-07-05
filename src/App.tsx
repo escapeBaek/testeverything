@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
 import ReactionTime from './ReactionTime';
 import ColorPerception from './ColorPerception';
@@ -56,6 +57,7 @@ const HomePage: React.FC = () => {
 function App() {
   return (
     <Router>
+      <Analytics />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/app/:id" element={<AppRouter />} />
